@@ -248,9 +248,21 @@ em {
 
 .logo {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
     flex-direction: column;
     gap: 2px;
-    text-decoration: none;
 }
 
 .logo-name {

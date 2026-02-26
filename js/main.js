@@ -60,26 +60,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* --- Contact form handling --- */
+    /* --- Contact form validation --- */
     var contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Gather form data
-            var formData = new FormData(contactForm);
-            var data = {};
-            formData.forEach(function (value, key) {
-                data[key] = value;
-            });
-
-            // Show success message
-            var successDiv = document.createElement('div');
-            successDiv.className = 'form-success visible';
-            successDiv.innerHTML = '<h3>Thank You!</h3><p>Your message has been received. Gill will get back to you soon.</p>';
-
-            contactForm.style.display = 'none';
-            contactForm.parentNode.insertBefore(successDiv, contactForm.nextSibling);
+            // Let Netlify handle the actual submission
+            // Just do basic client-side validation
+            var name = contactForm.querySelector('#name');
+            var email = contactForm.querySelector('#email');
+            var message = contactForm.querySelector('#message');
+            if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+                e.preventDefault();
+                return;
+            }
         });
     }
 

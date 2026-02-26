@@ -251,18 +251,6 @@ em {
     flex-direction: column;
     gap: 2px;
     text-decoration: none;
-    position: relative;
-    padding-left: 50px;
-}
-
-.logo-icon {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
 }
 
 .logo-name {
@@ -447,11 +435,12 @@ em {
     width: 100%;
     border-radius: var(--border-radius);
     object-fit: cover;
+    object-position: top center;
     box-shadow: var(--shadow-md);
 }
 
 .intro-photo {
-    max-height: 450px;
+    max-height: 500px;
 }
 
 .about-photo {

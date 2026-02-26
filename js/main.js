@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* --- Fade-in on scroll animation --- */
-    var fadeElements = document.querySelectorAll('.fade-in');
-    if (fadeElements.length > 0 && 'IntersectionObserver' in window) {
+    /* --- Scroll-triggered animations --- */
+    var animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in');
+    if (animatedElements.length > 0 && 'IntersectionObserver' in window) {
         var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        fadeElements.forEach(function (el) {
+        animatedElements.forEach(function (el) {
             observer.observe(el);
         });
     }

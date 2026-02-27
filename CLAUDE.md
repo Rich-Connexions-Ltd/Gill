@@ -73,7 +73,7 @@ images/             - Photos and images (logo-koi.png, portrait-gill.jpeg, etc.)
 ## Social Media Links
 
 - Website: www.gillmedwards.com
-- Facebook: facebook.com/gillmedwards
+- Facebook: https://www.facebook.com/share/1HkRMuBpPJ/?mibextid=wwXIfr
 - Instagram: instagram.com/iamgilledwards
 - LinkedIn: linkedin.com/in/gill-m-edwardssuccess
 

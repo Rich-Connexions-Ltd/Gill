@@ -24,7 +24,7 @@
     --color-border: #E8D5D7;
     /* Warm accent (softer complement) */
     --color-accent: #D4956A;
-    /* Fonts - clean and impactful like the book */
+    /* Fonts - testing Lora+Nunito as alternative to Playfair+Raleway */
     --font-heading: 'Lora', Georgia, 'Times New Roman', serif;
     --font-body: 'Nunito', 'Segoe UI', Tahoma, sans-serif;
     /* Layout */

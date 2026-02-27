@@ -28,18 +28,15 @@ jobs:
             # Create a new PR - Netlify will add a deploy preview automatically
             gh pr create \
               --title "Website update: ${BRANCH#claude/}" \
-              --body "$(cat <<'EOF'
-## Deploy Preview
+              --body "## Deploy Preview
 
-Netlify will automatically add a deploy preview link as a comment below.
-Click that link to review the changes before going live.
+          Netlify will automatically add a deploy preview link as a comment below.
+          Click that link to review the changes before going live.
 
-When you're happy with the preview, merge this PR to publish to the live site.
-EOF
-)" \
+          When you are happy with the preview, merge this PR to publish to the live site." \
               --base main \
               --head "$BRANCH"
             echo "Created new PR for $BRANCH"
           else
-            echo "PR #$EXISTING_PR already exists for $BRANCH — deploy preview will update automatically"
+            echo "PR #$EXISTING_PR already exists for $BRANCH - deploy preview will update automatically"
           fi

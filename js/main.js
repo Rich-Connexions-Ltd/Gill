@@ -4,45 +4,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    /* --- Mobile Navigation Toggle --- */
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function () {
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when a link is clicked
-        navMenu.querySelectorAll('a').forEach(function (link) {
-            link.addEventListener('click', function () {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function (e) {
-            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-            }
-        });
-    }
-
-    /* --- Header scroll effect --- */
-    const header = document.querySelector('.site-header');
-    if (header) {
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    }
-
     /* --- Fade-in on scroll animation --- */
     var fadeElements = document.querySelectorAll('.fade-in');
     if (fadeElements.length > 0 && 'IntersectionObserver' in window) {
@@ -85,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
             var target = document.querySelector(targetId);
             if (target) {
                 e.preventDefault();
-                var headerHeight = document.querySelector('.site-header').offsetHeight;
+                var headerEl = document.querySelector('.site-header');
+                var headerHeight = headerEl ? headerEl.offsetHeight : 0;
                 var targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
                 window.scrollTo({ top: targetPosition, behavior: 'smooth' });
             }

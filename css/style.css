@@ -381,9 +381,10 @@ em {
 }
 
 .hero-logo {
+    display: block;
     width: 150px;
     height: auto;
-    margin-bottom: var(--spacing-md);
+    margin: 0 auto var(--spacing-md);
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
     animation: heroLogoEntrance 1s ease forwards;
     animation-delay: 0.2s;

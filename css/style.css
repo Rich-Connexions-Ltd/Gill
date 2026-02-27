@@ -25,8 +25,8 @@
     /* Warm accent (softer complement) */
     --color-accent: #D4956A;
     /* Fonts - clean and impactful like the book */
-    --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
-    --font-body: 'Raleway', 'Segoe UI', Tahoma, sans-serif;
+    --font-heading: 'Lora', Georgia, 'Times New Roman', serif;
+    --font-body: 'Nunito', 'Segoe UI', Tahoma, sans-serif;
     /* Layout */
     --max-width: 1200px;
     --spacing-xs: 0.5rem;

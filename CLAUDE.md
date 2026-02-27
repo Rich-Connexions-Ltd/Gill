@@ -51,11 +51,25 @@ images/             - Photos and images (logo-koi.png, portrait-gill.jpeg, etc.)
 ```
 
 ### Deployment
+
 - **Hosted on**: Netlify at gillmedwards.netlify.app
 - **Repository**: Rich-Connexions-Ltd/Gill on GitHub
-- **Auto-deploy**: Pushes to `main` branch trigger automatic Netlify deployment
-- **GitHub Action**: `auto-merge-to-main.yml` auto-merges `claude/**` branches to main
+- **Live deploys**: Only pushes to `main` trigger a production deploy (costs 15 Netlify credits)
+- **Deploy previews**: PRs get automatic Netlify deploy previews (cheaper, no impact on live site)
+- **GitHub Action**: `auto-merge-to-main.yml` auto-creates a PR when pushing to `claude/**` branches (does NOT auto-merge to main)
 - **Forms**: Contact form uses Netlify Forms (data-netlify="true")
+
+### Deploy Workflow (IMPORTANT — saves Netlify credits)
+
+1. **Claude pushes** to a `claude/**` branch — this is free, nothing deploys yet
+2. **GitHub Action** automatically creates a PR from that branch to main
+3. **Netlify** adds a deploy preview link as a comment on the PR
+4. **Gill reviews** the preview to check the changes look right
+5. **Only when happy**, the PR is merged to main — this triggers the one production deploy (15 credits)
+
+This means multiple changes can be batched into one PR before going live, saving credits.
+
+**For Claude**: Do NOT merge PRs to main unless Gill explicitly asks to go live / publish / deploy. Always let Gill review the deploy preview first.
 
 ## Brand Colours (from "Stress Less? Hell Yes!" book cover)
 

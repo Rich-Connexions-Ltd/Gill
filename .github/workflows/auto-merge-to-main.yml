@@ -1,4 +1,4 @@
-name: Auto-merge to main
+name: Create PR for review
 
 on:
   push:
@@ -7,20 +7,39 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
-  merge:
+  create-pr:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Merge to main
+      - name: Create or update PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout main
-          git merge origin/${{ github.ref_name }} --no-edit
-          git push origin main
+          BRANCH="${{ github.ref_name }}"
+          # Check if a PR already exists for this branch
+          EXISTING_PR=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
+          if [ -z "$EXISTING_PR" ]; then
+            # Create a new PR - Netlify will add a deploy preview automatically
+            gh pr create \
+              --title "Website update: ${BRANCH#claude/}" \
+              --body "$(cat <<'EOF'
+## Deploy Preview
+
+Netlify will automatically add a deploy preview link as a comment below.
+Click that link to review the changes before going live.
+
+When you're happy with the preview, merge this PR to publish to the live site.
+EOF
+)" \
+              --base main \
+              --head "$BRANCH"
+            echo "Created new PR for $BRANCH"
+          else
+            echo "PR #$EXISTING_PR already exists for $BRANCH — deploy preview will update automatically"
+          fi

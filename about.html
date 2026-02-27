@@ -11,32 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="site-header">
-        <nav class="navbar">
-            <div class="container">
-                <a href="index.html" class="logo">
-                    <img src="images/logo-koi.png" alt="Gill M Edwards logo" class="logo-img">
-                    <div class="logo-text">
-                        <span class="logo-name">Gill M Edwards</span>
-                        <span class="logo-tagline">Stress Disruptor &amp; Reiki Practitioner</span>
-                    </div>
-                </a>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="book.html">The Book</a></li>
-                    <li><a href="singalong.html">Singalong</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <div id="site-nav"></div>
 
     <main>
         <section class="page-hero">
@@ -66,7 +41,7 @@
 
         <section class="about-journey section section-alt">
             <div class="container">
-                <div class="journey-content">
+                <div class="journey-content fade-in">
                     <span class="section-label">The Journey</span>
                     <h2>From Nurse to Stress Disruptor</h2>
                     <div class="timeline">
@@ -119,15 +94,15 @@
                         <h3>See Between the Lines</h3>
                         <p>I start with 1:1 sessions because I want to truly understand you &mdash; not just what you say, but what's happening beneath the surface.</p>
                     </div>
-                    <div class="approach-card fade-in" style="transition-delay: 0.1s;">
+                    <div class="approach-card fade-in" style="transition-delay: 0.15s;">
                         <h3>Stop the Drowning</h3>
                         <p>First things first: we stop the overwhelm. We create space for you to breathe again before we work on the bigger picture.</p>
                     </div>
-                    <div class="approach-card fade-in" style="transition-delay: 0.2s;">
+                    <div class="approach-card fade-in" style="transition-delay: 0.3s;">
                         <h3>Lead You Out</h3>
                         <p>Together, we navigate out of the stress you've been carrying. I walk alongside you &mdash; because I've walked this path myself.</p>
                     </div>
-                    <div class="approach-card fade-in" style="transition-delay: 0.3s;">
+                    <div class="approach-card fade-in" style="transition-delay: 0.45s;">
                         <h3>Come Home</h3>
                         <p>The ultimate goal is for you to step back into yourself &mdash; to rediscover who you are when stress isn't running the show.</p>
                     </div>
@@ -155,39 +130,9 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <h3>Gill M Edwards</h3>
-                    <p>Stress Disruptor &amp; Reiki Practitioner based in Stoke-on-Trent, Staffordshire.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="book.html">The Book</a></li>
-                        <li><a href="singalong.html">Singalong</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Connect</h4>
-                    <ul class="footer-social-links">
-                        <li><a href="https://facebook.com/gillmedwards" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                        <li><a href="https://instagram.com/iamgilledwards" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                        <li><a href="https://linkedin.com/in/gill-m-edwardssuccess" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Gill M Edwards. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="site-footer"></div>
 
+    <script src="js/includes.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -12,29 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="site-header">
-        <nav class="navbar">
-            <div class="container">
-                <a href="index.html" class="logo">
-                    <span class="logo-name">Gill M Edwards</span>
-                    <span class="logo-tagline">Stress Disruptor &amp; Reiki Practitioner</span>
-                </a>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="book.html" class="active">The Book</a></li>
-                    <li><a href="singalong.html">Singalong</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <div id="site-nav"></div>
 
     <main>
         <section class="page-hero">
@@ -47,13 +25,13 @@
         <section class="book-intro section">
             <div class="container">
                 <div class="book-grid">
-                    <div class="book-cover">
+                    <div class="book-cover fade-in-left">
                         <img src="images/book-cover.jpg" alt="Stress Less? Hell Yes! by Gill M Edwards - book cover" class="book-cover-image">
                         <div class="book-buy-badges">
                             <span class="book-badge">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0 on Amazon</span>
                         </div>
                     </div>
-                    <div class="book-content">
+                    <div class="book-content fade-in-right">
                         <span class="section-label">The Book</span>
                         <h2>Written from Lived Experience, Not Just Theory</h2>
                         <p>After thirty-four years in nursing &mdash; sixteen as a clinical nurse specialist on an Intensive Care Unit &mdash; Gill knows what chronic stress looks like from the inside out. She has lived through burnout, breakdown, and the long road back to herself.</p>
@@ -73,7 +51,7 @@
                 <span class="section-label">Inside the Book</span>
                 <h2 class="section-title">What You'll Discover</h2>
                 <div class="book-discover-grid">
-                    <div class="book-discover-card">
+                    <div class="book-discover-card fade-in" style="transition-delay: 0s;">
                         <div class="book-discover-icon">
                             <svg viewBox="0 0 64 64" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M32 8c-8 0-16 8-16 20s16 28 16 28 16-16 16-28S40 8 32 8z"/>
@@ -83,7 +61,7 @@
                         <h3>Understand Your Stress Response</h3>
                         <p>Learn how chronic stress affects your body, mind, emotions, and sense of self &mdash; backed by science and explained in plain English.</p>
                     </div>
-                    <div class="book-discover-card">
+                    <div class="book-discover-card fade-in" style="transition-delay: 0.15s;">
                         <div class="book-discover-icon">
                             <svg viewBox="0 0 64 64" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="32" cy="32" r="20"/>
@@ -93,7 +71,7 @@
                         <h3>Calm Your Nervous System</h3>
                         <p>Practical tools and techniques to gently reset your nervous system and move from survival mode to feeling safe again.</p>
                     </div>
-                    <div class="book-discover-card">
+                    <div class="book-discover-card fade-in" style="transition-delay: 0.3s;">
                         <div class="book-discover-icon">
                             <svg viewBox="0 0 64 64" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 40c0-6 4-10 8-10s6 2 8 6c2-8 6-16 12-16s12 8 12 20"/>
@@ -103,7 +81,7 @@
                         <h3>Release What You're Carrying</h3>
                         <p>Discover how tension lives in the body and learn to let it go through habits, food choices, sleep, voice, and environment.</p>
                     </div>
-                    <div class="book-discover-card">
+                    <div class="book-discover-card fade-in" style="transition-delay: 0.45s;">
                         <div class="book-discover-icon">
                             <svg viewBox="0 0 64 64" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M16 48l8-16 8 8 8-24 8 16"/>
@@ -122,7 +100,7 @@
                 <span class="section-label">Chapter by Chapter</span>
                 <h2 class="section-title">A Journey from Stress to Strength</h2>
                 <p class="section-subtitle">Each chapter explores a different dimension of how stress affects your life &mdash; and gives you the tools to take back control.</p>
-                <div class="book-chapters-list">
+                <div class="book-chapters-list fade-in">
                     <div class="book-chapter-item">
                         <span class="chapter-number">01</span>
                         <div>
@@ -193,10 +171,10 @@
         <section class="book-about-author section section-alt">
             <div class="container">
                 <div class="about-author-grid">
-                    <div class="about-author-image">
+                    <div class="about-author-image fade-in-left">
                         <img src="images/portrait-gill.jpeg" alt="Gill M Edwards - author" class="about-photo">
                     </div>
-                    <div class="about-author-text">
+                    <div class="about-author-text fade-in-right">
                         <span class="section-label">About the Author</span>
                         <h2>Meet Gill</h2>
                         <p>Gill M Edwards is a former NHS clinical nurse specialist turned Stress Disruptor Coach. With thirty-four years of nursing experience &mdash; including a decade on an Intensive Care Unit &mdash; and over fourteen years as a qualified coach and Reiki practitioner, she brings a unique blend of scientific understanding and holistic wisdom to everything she does.</p>
@@ -221,39 +199,9 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <h3>Gill M Edwards</h3>
-                    <p>Stress Disruptor &amp; Reiki Practitioner based in Stoke-on-Trent, Staffordshire.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="book.html">The Book</a></li>
-                        <li><a href="singalong.html">Singalong</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Connect</h4>
-                    <ul class="footer-social-links">
-                        <li><a href="https://facebook.com/gillmedwards" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                        <li><a href="https://instagram.com/iamgilledwards" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                        <li><a href="https://linkedin.com/in/gill-m-edwardssuccess" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Gill M Edwards. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="site-footer"></div>
 
+    <script src="js/includes.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

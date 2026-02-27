@@ -53,8 +53,16 @@ images/             - Photos and images (logo-koi.png, portrait-gill.jpeg, etc.)
 ### Deployment
 - **Hosted on**: Netlify at gillmedwards.netlify.app
 - **Repository**: Rich-Connexions-Ltd/Gill on GitHub
-- **Auto-deploy**: Pushes to `main` branch trigger automatic Netlify deployment
-- **GitHub Action**: `auto-merge-to-main.yml` auto-merges `claude/**` branches to main
+- **Production deploy**: Pushes to `main` branch trigger automatic Netlify deployment
+- **Deploy previews**: Create a PR against `main` to trigger a Netlify deploy preview at `deploy-preview-<N>--gillmedwards.netlify.app`. Use this to review changes visually before merging.
+- **Workflow for previews**:
+  1. Work on a `claude/*` branch
+  2. Push the branch to origin
+  3. Create a PR: `gh pr create --title "Description" --body "..." --base main --head <branch>`
+  4. Netlify automatically builds a deploy preview from the PR
+  5. Review the preview at the deploy preview URL
+  6. If happy, merge the PR to deploy to production
+  7. If not happy, close the PR without merging: `gh pr close <N>`
 - **Forms**: Contact form uses Netlify Forms (data-netlify="true")
 
 ## Brand Colours (from "Stress Less? Hell Yes!" book cover)

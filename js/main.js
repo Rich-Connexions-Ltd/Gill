@@ -4,8 +4,8 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    /* --- Fade-in on scroll animation --- */
-    var fadeElements = document.querySelectorAll('.fade-in');
+    /* --- Scroll-triggered animations --- */
+    var fadeElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in');
     if (fadeElements.length > 0 && 'IntersectionObserver' in window) {
         var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {

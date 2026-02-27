@@ -22,21 +22,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           BRANCH="${{ github.ref_name }}"
-          # Check if a PR already exists for this branch
           EXISTING_PR=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
           if [ -z "$EXISTING_PR" ]; then
-            # Create a new PR - Netlify will add a deploy preview automatically
-            gh pr create \
-              --title "Website update: ${BRANCH#claude/}" \
-              --body "## Deploy Preview
-
-          Netlify will automatically add a deploy preview link as a comment below.
-          Click that link to review the changes before going live.
-
-          When you are happy with the preview, merge this PR to publish to the live site." \
-              --base main \
-              --head "$BRANCH"
+            BODY="## Deploy Preview"
+            BODY="${BODY}\n\nNetlify will automatically add a deploy preview link as a comment below."
+            BODY="${BODY}\nClick that link to review the changes before going live."
+            BODY="${BODY}\n\nWhen you are happy with the preview, merge this PR to publish to the live site."
+            gh pr create --title "Website update: ${BRANCH#claude/}" --body "$(echo -e "$BODY")" --base main --head "$BRANCH"
             echo "Created new PR for $BRANCH"
           else
-            echo "PR #$EXISTING_PR already exists for $BRANCH - deploy preview will update automatically"
+            echo "PR #$EXISTING_PR already exists for $BRANCH"
           fi

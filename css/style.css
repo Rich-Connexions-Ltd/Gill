@@ -695,6 +695,180 @@ em {
     margin-top: var(--spacing-sm);
 }
 
+/* --- Book Page Styles --- */
+.book-buy-badges {
+    margin-top: var(--spacing-sm);
+    text-align: center;
+}
+
+.book-badge {
+    display: inline-block;
+    background-color: var(--color-blush);
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+}
+
+.book-cta-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.book-price-note {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.book-discover-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.book-discover-card {
+    background: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition);
+}
+
+.book-discover-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.book-discover-icon {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.book-discover-card h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+}
+
+.book-discover-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.section-subtitle {
+    max-width: 650px;
+    margin: 0 auto var(--spacing-lg);
+    color: var(--color-text-light);
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.book-chapters-list {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.book-chapter-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.book-chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-number {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    min-width: 45px;
+    line-height: 1.3;
+}
+
+.book-chapter-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.book-chapter-item p {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.about-author-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.about-author-image .about-photo {
+    max-height: 450px;
+}
+
+.about-author-text h2 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.about-author-text p {
+    color: var(--color-text-light);
+}
+
+.about-author-text .btn {
+    margin-top: var(--spacing-sm);
+}
+
+.book-cta-section {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.book-cta-section h2 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.book-cta-section p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+.book-cta-buttons {
+    margin: var(--spacing-md) 0 var(--spacing-sm);
+}
+
+.book-cta-section .btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+}
+
+.book-cta-section .btn-primary:hover {
+    background-color: var(--color-off-white);
+    color: var(--color-primary-dark);
+}
+
+.book-cta-sub {
+    font-size: 0.9rem !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    margin-top: var(--spacing-xs);
+}
+
 /* --- Singalong Preview --- */
 .singalong-grid {
     display: grid;
@@ -1325,6 +1499,20 @@ em {
 
     .book-cover-placeholder {
         max-width: 260px;
+    }
+
+    .book-discover-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-author-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .book-cta-group {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 

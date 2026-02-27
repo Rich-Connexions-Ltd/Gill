@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        animatedElements.forEach(function (el) {
+        fadeElements.forEach(function (el) {
             observer.observe(el);
         });
     }

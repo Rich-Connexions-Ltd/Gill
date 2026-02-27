@@ -70,8 +70,9 @@ images/             - Photos and images (logo-koi.png, portrait-gill.jpeg, etc.)
 - **Headings**: Playfair Display (elegant serif)
 - **Body Text**: Raleway (clean sans-serif)
 
-## Social Media Links
+## Contact & Social Media Links
 
+- Email: gillmedwards56@gmail.com
 - Website: www.gillmedwards.com
 - Facebook: https://www.facebook.com/share/1HkRMuBpPJ/?mibextid=wwXIfr
 - Instagram: instagram.com/iamgilledwards

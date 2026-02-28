@@ -342,6 +342,190 @@ em {
     transition: all var(--transition);
 }
 
+/* --- Hero Banner (Promotional) --- */
+.hero-banner {
+    position: relative;
+    margin-top: 80px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 60%, #8B1A1A 100%);
+    overflow: hidden;
+    padding: var(--spacing-lg) 0;
+}
+
+.hero-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.hero-banner-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--spacing-lg);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-banner-book {
+    position: relative;
+    text-align: center;
+}
+
+.hero-banner-book-img {
+    width: 180px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-banner-badge {
+    position: absolute;
+    top: -10px;
+    right: -15px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #1A1A1A;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+.badge-text {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.badge-sub {
+    font-size: 0.6rem;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.hero-banner-text {
+    text-align: center;
+    padding: var(--spacing-md) 0;
+}
+
+.hero-banner-tagline {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--color-white);
+    line-height: 1.5;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-banner .btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border-color: var(--color-white);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.hero-banner .btn-primary:hover {
+    background-color: var(--color-blush);
+    border-color: var(--color-blush);
+    color: var(--color-primary-dark);
+}
+
+.hero-banner-photo {
+    text-align: center;
+}
+
+.hero-banner-photo-img {
+    width: 260px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero banner responsive */
+@media (max-width: 900px) {
+    .hero-banner-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+
+    .hero-banner-text {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .hero-banner-book {
+        justify-self: center;
+    }
+
+    .hero-banner-photo {
+        justify-self: center;
+    }
+
+    .hero-banner-book-img {
+        width: 150px;
+    }
+
+    .hero-banner-photo-img {
+        width: 200px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-banner-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .hero-banner-text {
+        grid-column: 1;
+    }
+
+    .hero-banner-book {
+        grid-row: auto;
+    }
+
+    .hero-banner-photo {
+        display: none;
+    }
+
+    .hero-banner-book-img {
+        width: 130px;
+    }
+
+    .hero-banner-badge {
+        width: 60px;
+        height: 60px;
+        right: -10px;
+    }
+
+    .badge-text {
+        font-size: 0.65rem;
+    }
+
+    .badge-sub {
+        font-size: 0.55rem;
+    }
+}
+
 /* --- Hero Section --- */
 .hero {
     position: relative;
@@ -349,8 +533,13 @@ em {
     display: flex;
     align-items: center;
     background-color: var(--color-blush);
-    margin-top: 80px;
+    margin-top: 0;
     overflow: hidden;
+}
+
+/* Fallback: if hero is first child (no banner), keep nav offset */
+.hero:first-child {
+    margin-top: 80px;
 }
 
 .hero-overlay {
